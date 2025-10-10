@@ -112,7 +112,7 @@ function downloadCV() {
 }
 
 // === FORM KONTAK KE GOOGLE SHEETS + EMAIL ===
-const scriptURL = "https://script.google.com/macros/s/AKfycbwX8VuBGPBKbgzh8WQ8jWrTf2LMTaXIy6wNLs7wrLqUYPZ-YuBXisyTAx5HnKWDaYeM/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbx5-k94-hNCvECtc09MJzDs6SNLRg9oidVPac_1bK2OTkCxPyDu1cg02B4evStMUqme6g/exec";
 
 const form = document.forms["submit-to-google-sheet"];
 
