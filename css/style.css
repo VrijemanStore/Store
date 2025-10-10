@@ -1994,3 +1994,131 @@ form .row .contact-form .btn {
 ::-webkit-scrollbar-thumb:hover {
     background: #000;
 }
+
+
+/* Projects/Products Section Styles */
+
+.projects .container {
+    padding-bottom: 60px;
+    /* Menambah sedikit ruang di bawah bagian products */
+}
+
+
+/* Mengatur agar setiap product item memakan 1/4 (25%) dari lebar baris */
+
+.project-item {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin-bottom: 30px;
+    /* Ruang di bawah setiap item */
+    padding: 0 10px;
+    /* Padding dari class padd-15 sudah diatur di HTML, tapi kita tambahkan lagi untuk memastikan */
+}
+
+
+/* Styling umum untuk item produk */
+
+.project-item-inner {
+    border: 1px solid var(--bg-black-100);
+    /* Border halus */
+    border-radius: 10px;
+    overflow: hidden;
+    /* Penting untuk gambar */
+    cursor: pointer;
+    background-color: var(--bg-black-100);
+}
+
+
+/* Efek saat kursor di atas item */
+
+.project-item-inner:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+
+/* Kontainer Gambar */
+
+.project-img {
+    position: relative;
+    /* Pastikan gambar mengisi container */
+}
+
+.project-img img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    /* Memastikan gambar menyesuaikan tanpa terdistorsi */
+    border-radius: 10px 10px 0 0;
+    /* Hanya bagian atas yang rounded */
+}
+
+
+/* Kontainer Informasi Produk */
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-info h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    /* Menggunakan warna teks utama */
+}
+
+
+/* Styling Harga Produk */
+
+.product-info p {
+    font-size: 16px;
+    /* Dibuat sedikit lebih besar */
+    color: var(--skin-color);
+    /* Tetap menggunakan warna aksen (yang Anda tentukan di style-switcher) */
+    font-weight: 600;
+    /* Dibuat tebal agar harga menonjol */
+    margin-bottom: 15px;
+    min-height: 20px;
+    /* Disesuaikan karena teksnya lebih pendek */
+}
+
+.product-info .btn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+
+
+/* Media Query untuk Tablet (2 Produk per baris) */
+
+@media (max-width: 991px) {
+    .project-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+/* Media Query untuk Ponsel (1 Produk per baris) */
+
+@media (max-width: 767px) {
+    .project-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* .main-content {
+    padding-left: 270px;
+}
+*/
+
+.main-content .container1 {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
