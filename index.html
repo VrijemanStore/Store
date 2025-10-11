@@ -77,7 +77,7 @@
                                 <a href="https://instagram.com/dipacaturasyafa?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                             </div> -->
                             <!-- <a id="downloadLink" href="assets/CV-Dipa-Catur.pdf" class="btn" onclick="downloadCV()">Belanja Sekarang</a> -->
-                            <a href="#projects" data-section-index="1" class="btn hire-me">Belanja Sekarang</a>
+                            <a href="#projects" class="btn hire-me">Belanja Sekarang</a>
 
                         </div>
                         <div class="home-img padd-15">
@@ -90,22 +90,22 @@
             <!-- About Start -->
             <section class="about section" id="about">
                 <div class="container">
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="section-title padd-15">
-                            <h2>About Me</h2>
+                            <h2 class="abot">About Me</h2>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="about-img">
-                        <img src="img/dipa-2.jpg" alt="" />
+                        <img src="img/vrai.png" alt="" />
                     </div>
                     <div class="row">
                         <div class="about-content padd-15">
                             <div class="row">
                                 <div class="about-text padd-15">
-                                    <h3>I am <span>Vrijeman - Store</span></h3>
+                                    <h3 id="abut">I am <span>Vrijeman - Store</span></h3>
                                     <p id="abut">
-                                        Halo semua, Vrijeman - Store Dibuat Untuk Memenuhi Tugas Kuliah dalam Mata kuliah Entrepreneurship Dengan Dosen Pengampu Try Santi KD, SE., M.Si di STKIP Almaksum tepatnya di program studi S1 Pendidikan Teknik Informatika. Vrijeman - Store Dapat Menyediakan
-                                        apa yang kamu butuhkan dengan menghubungi admin
+                                        Halo semua, Vrijeman - Store dibuat untuk memenuhi tugas kuliah dalam mata kuliah entrepreneurship dengan dosen Pengampu Try Santi KD, SE., M.Si di STKIP Almaksum langkat tepatnya di program studi S1 pendidikan teknik informatika. Vrijeman - Store dapat
+                                        menyediakan apa yang kamu Butuhkan dengan menghubungi admin , product akan ready di store 1 hari kedepan .
                                 </div>
                             </div>
                             <div class="row">
@@ -126,7 +126,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="#contact" data-section-index="1" class="btn hire-me">Contact Me</a>
+                                            <!-- <a href="#contact" data-section-index="1" class="btn hire-me">Contact Me</a> -->
+                                            <!-- <a href="#contact" class="btn hire-me">Contact Me</a> -->
+                                            <a href="#contact" class="btn hire-me">Contact Me</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +246,7 @@
                                 <div class="project-item padd-15">
                                     <div class="project-item-inner shadow-dark">
                                         <div class="project-img">
-                                            <img src="img/img/produk/canva.jpg" alt="Product Name 1" />
+                                            <img src="img/produk/canva.jpg" alt="Product Name 1" />
                                             <div class="product-info">
                                                 <h4>Canva Premium 1 Bulan ( Invite )</h4>
                                                 <p>Rp. 10.000,.</p>
@@ -255,7 +258,7 @@
                                 <div class="project-item padd-15">
                                     <div class="project-item-inner shadow-dark">
                                         <div class="project-img">
-                                            <img src="img/img/produk/ps.jpg" alt="Product Name 2" />
+                                            <img src="img/produk/ps.jpg" alt="Product Name 2" />
                                             <div class="product-info">
                                                 <h4>Adobe Photoshop 2025 Profesional</h4>
                                                 <p>Rp. 10.000,.</p>
@@ -267,7 +270,7 @@
                                 <div class="project-item padd-15">
                                     <div class="project-item-inner shadow-dark">
                                         <div class="project-img">
-                                            <img src="img/img/produk/ai.jpg" alt="Product Name 3" />
+                                            <img src="img/produk/ai.jpg" alt="Product Name 3" />
                                             <div class="product-info">
                                                 <h4>Adobe Illustrator 2025 Profesional</h4>
                                                 <p>Rp. 10.000,.</p>
@@ -279,7 +282,7 @@
                                 <div class="project-item padd-15">
                                     <div class="project-item-inner shadow-dark">
                                         <div class="project-img">
-                                            <img src="img/img/produk/pr.jpg" alt="Product Name 4" />
+                                            <img src="img/produk/pr.jpg" alt="Product Name 4" />
                                             <div class="product-info">
                                                 <h4>Adobe Premiere 2025 Profesional</h4>
                                                 <p>Rp. 10.000,.</p>
@@ -440,6 +443,37 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.16/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="js/script.js"></script>
             <script src="js/style-switcher.js"></script>
+            <script>
+                // Fungsi umum agar tombol hire-me bisa navigasi ke section yang benar
+                document.querySelectorAll('.hire-me').forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+
+                        const targetId = button.getAttribute('href'); // misal: #contact / #projects
+                        const targetSection = document.querySelector(targetId);
+
+                        // Nonaktifkan semua section dulu
+                        document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+
+                        // Aktifkan section tujuan
+                        if (targetSection) targetSection.classList.add('active');
+
+                        // Ganti indikator sidebar aktif
+                        document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
+                        const activeLink = document.querySelector(`.nav a[href="${targetId}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+
+                        // Scroll ke atas dengan efek halus
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            </script>
+
+
+
 </body>
 
 </html>
