@@ -304,7 +304,7 @@ ul {
     color: var(--text-black-900);
     background: #fffbf9;
     opacity: 0;
-    animation: fade-in 1s ease-out;
+    animation: fade-in 0.1s ease-out;
 }
 
 @keyframes fade-in {
@@ -340,8 +340,10 @@ h1.hai span {
 }
 
 #abut {
+    font-size: 17px;
+    margin: 15px 0;
+    color: var(--text-black-900);
     text-align: justify;
-    font-size: 20px;
 }
 
 p.des span {
@@ -355,7 +357,9 @@ p.des span {
 }
 
 #cons {
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    word-wrap: break-word;
 }
 
 h3.my-proffession {
@@ -422,8 +426,11 @@ h3.my-proffession {
     top: 0;
     left: 0;
     max-width: 90%;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease; */
     padding-left: 6rem;
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 .home .home-img img.image-1 {
@@ -434,6 +441,9 @@ h3.my-proffession {
     max-width: 140%;
     opacity: 0;
     z-index: 0;
+    opacity: 1 !important;
+    transition: none !important;
+    animation: none !important;
 }
 
 
@@ -460,12 +470,12 @@ h3.my-proffession {
 /* About CSS */
 
 .about {
-    background: #111111;
+    background: #fffbf9;
 }
 
 .section .container {
-    padding-top: 60px;
-    padding-bottom: 70px;
+    padding-top: 40px;
+    padding-bottom: 25px;
 }
 
 .section-title {
@@ -476,7 +486,14 @@ h3.my-proffession {
 
 .section-title h2 {
     font-size: 40px;
-    color: var(--bg-black-900);
+    color: var(--bg-black-100);
+    font-weight: 700;
+    position: relative;
+}
+
+.section-title .abot {
+    font-size: 40px;
+    color: var(--bg-dark-variant);
     font-weight: 700;
     position: relative;
 }
@@ -523,12 +540,23 @@ h3.my-proffession {
     color: var(--skin-color);
 }
 
+
+/* --- Pusatkan gambar di About Section --- */
+
+.about-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 .about-img img {
-    width: 200px;
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    /* sesuaikan ukuran */
     height: auto;
-    display: none;
-    margin: auto;
-    /* Menengahkan gambar secara horizontal */
 }
 
 .about .about-content .about-text p {
@@ -538,14 +566,15 @@ h3.my-proffession {
 }
 
 .about .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 100%;
     margin-top: 40px;
 }
 
 .about .about-content .personal-info .info-item {
-    flex: 0 0 50%;
-    max-width: 50%;
+    flex: 0 0 100%;
+    max-width: 90%;
+    text-align: center;
 }
 
 .about .about-content .personal-info .info-item p {
@@ -558,12 +587,13 @@ h3.my-proffession {
 
 .about .about-content .personal-info .info-item p span {
     font-weight: 400;
-    color: var(--text-grey);
+    color: var(--text-black-900);
     display: inline-block;
 }
 
 .about .about-content .personal-info .buttons {
-    margin-top: 30px;
+    margin-top: 15px;
+    /* padding-left: 50px; */
 }
 
 .about .about-content .personal-info .buttons .btn {
@@ -1839,9 +1869,11 @@ form .row .contact-form .btn {
 
 /* Media Query for Responsive */
 
-@media (max-width: 1199px) {
-    .section .container {
-        padding-top: 70px;
+@media (max-width: 768px) {
+    .about .about-content .personal-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .aside {
         left: -270px;
@@ -1858,7 +1890,8 @@ form .row .contact-form .btn {
     }
     .about .about-content .personal-info .info-item p span {
         display: block;
-        margin-left: 0;
+        word-break: break-all;
+        /* supaya email panjang tidak keluar dari layar */
     }
 }
 
@@ -2122,3 +2155,72 @@ form .row .contact-form .btn {
     padding-right: 15px;
     margin: 0 auto;
 }
+
+
+/* --- Phone dan Gmail sejajar tanpa scroll --- */
+
+.about .about-content .personal-info .row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    /* jarak antar kolom */
+    flex-wrap: wrap;
+    /* agar otomatis turun bila sempit */
+}
+
+.about .about-content .personal-info .info-item {
+    flex: 1 1 250px;
+    /* lebar minimum 250px, tapi fleksibel */
+    max-width: 400px;
+    text-align: center;
+}
+
+.about .about-content .personal-info .info-item p {
+    margin: 0;
+    font-size: 18px;
+    color: var(--skin-color);
+}
+
+.about .about-content .personal-info .info-item span {
+    color: var(--text-black-900);
+    font-weight: 500;
+    word-break: break-word;
+    /* supaya teks panjang turun ke bawah */
+}
+
+.about .about-content .personal-info .info-item a {
+    color: var(--text-black-900);
+    text-decoration: none;
+    word-break: break-all;
+}
+
+.about .about-content .personal-info .info-item a:hover {
+    color: var(--skin-color);
+}
+
+
+/* --- Responsif untuk HP kecil --- */
+
+@media (max-width: 600px) {
+    .about .about-content .personal-info .row {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .about .about-content .personal-info .info-item {
+        flex: 1 1 100%;
+        text-align: left;
+    }
+    .about .about-content .personal-info .info-item p {
+        font-size: 16px;
+    }
+}
+
+
+/* .info-item {
+    border-bottom: 1px solid #000000;
+    ganti warna sesuai selera
+    padding-bottom: 5px;
+    jarak ke garis
+    margin-bottom: 10px;
+} */
